@@ -1,0 +1,19 @@
+body {
+  min-height: 2000px;
+  padding-top: 70px;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#clear{
+  /*margin-left: 290px;*/
+  margin-top: 25px;
+}
+
+span#calc{
+  margin-right: 6px;
+}

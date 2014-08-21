@@ -1,0 +1,18 @@
+.ui-datepicker{
+  margin: 0 auto;
+}
+
+.ui-datepicker-calendar {
+  font-size: 0.8em !important;
+  /*width: inherit !important;*/
+  /*height: inherit !important;*/
+}
+
+.holidays{
+  border: 1px solid red !important;
+}
+
+#cal-holidays{
+  color: red;
+  margin-left: 50px;
+}
