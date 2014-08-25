@@ -4,13 +4,12 @@ jQuery(document).ready(function($) {
   // for (var i = 0; i < f.length; i++) {
   //     document.write(f[i].name + " " + f[i].date.toLocaleString() + ", ");
   // };
-  $('#date').datepicker();
   $('#calendar').datepicker({
-    showOtherMonths: true,
     changeYear: true,
     beforeShowDay: function(date) {
-        var auxHolidays = $.flexibleHolidays(date.getFullYear());
-        var holidays = auxHolidays.concat($.staticHolidays(date.getFullYear()));
+        // var auxHolidays = $.flexibleHolidays(date.getFullYear());
+        // var holidays = auxHolidays.concat($.staticHolidays(date.getFullYear()));
+        var holidays = $.sortStaticAndFlexHolidays(date.getFullYear());
         for (var i = 0; i < holidays.length; i++) {
             if (date.getMonth() == holidays[i].month - 1 && date.getDate() == holidays[i].day) {
                 return [true, 'holidays', holidays[i].name];
@@ -20,8 +19,9 @@ jQuery(document).ready(function($) {
         return [true, ''];
     },
     onChangeMonthYear: function(year, month, inst) {
-      var auxHolidays = $.flexibleHolidays(year);
-      var holidays = auxHolidays.concat($.staticHolidays(year));
+      // var auxHolidays = $.flexibleHolidays(year);
+      // var holidays = auxHolidays.concat($.staticHolidays(year));
+      var holidays = $.sortStaticAndFlexHollidays(year);
       $('h6').remove();
       for (var i = 0; i < holidays.length; i++) {
         if (month == holidays[i].month) {
@@ -31,7 +31,8 @@ jQuery(document).ready(function($) {
         };
 
       };
-    }
+    },
+    showOtherMonths: true
   });
   // $('.ui-datepicker-calendar').css('font-size', '0.8em');
 });

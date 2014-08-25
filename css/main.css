@@ -17,3 +17,13 @@ body {
 span#calc{
   margin-right: 6px;
 }
+
+.title-prazo {
+  background: #E6E6E6;
+  border-color: #BDBDBD;
+}
+
+
+/*.inputs, #form-prazo {
+  border: 1px solid #000;
+}*/

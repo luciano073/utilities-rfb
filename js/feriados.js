@@ -90,6 +90,15 @@
     });
   };
 
+  $.sortStaticAndFlexHolidays = function(year) {
+    var sHolidays = $.staticHolidays(year);
+    var fHolidays = $.flexibleHolidays(year);
+    var holidays = sHolidays.concat(fHolidays);
+    return holidays.sort(function(a, b) {
+      return a.date - b.date;
+    });
+  };
+
   $.allHolidays = function(year) {
       var sHolidays = $.staticHolidays(year);
       var fHolidays = $.flexibleHolidays(year);
