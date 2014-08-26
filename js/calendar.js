@@ -21,7 +21,7 @@ jQuery(document).ready(function($) {
     onChangeMonthYear: function(year, month, inst) {
       // var auxHolidays = $.flexibleHolidays(year);
       // var holidays = auxHolidays.concat($.staticHolidays(year));
-      var holidays = $.sortStaticAndFlexHollidays(year);
+      var holidays = $.sortStaticAndFlexHolidays(year);
       $('h6').remove();
       for (var i = 0; i < holidays.length; i++) {
         if (month == holidays[i].month) {
