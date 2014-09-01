@@ -92,12 +92,26 @@ jQuery(document).ready(function($) {
     $('div.time, div.aware').removeClass('has-error');
   });
 
-  $(':input').inputmask();
+  // $(':input').inputmask();
+  $('#aware-date').inputmask('date', 
+    {
+      placeholder: 'DD/MM/AAAA',
+      yearrange: {minyear: 1500, maxyear: 2199}
+    }).tooltip(
+    {
+      title: 'Informe a data da ciência.',
+      placement: 'bottom'
+    });
+
   $('#time-deadline').inputmask('integer',
    {
       // placeholder: '0',
       rightAlign: false,
       repeat: 3
+    }).tooltip(
+    {
+      title: 'Informe o prazo do recurso.',
+      placement: 'bottom'
     });
 
   // $('span.glyphicon-info-sign').tooltip();

@@ -1,0 +1,8 @@
+.title-irpf {
+  background: #E6E6E6;
+  border-color: #BDBDBD;
+}
+
+#irpf > input{
+  margin-bottom: 3px !important;
+}

@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Utilitários RFB</title>
+  <title>Utilitários RFB :: IRPF</title>
   <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/calendar.css" type="text/css">
   <link rel="stylesheet" href="css/main.css" type="text/css">
+  <link rel="stylesheet" href="css/irpf.css" type="text/css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,9 +35,9 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <!-- <li class=""><a href="#"></a></li>
-          <li><a href="#about"></a></li>
-          <li><a href="#contact"></a></li> -->
+          <li class=""><a href="prazos.html">Prazos</a></li>
+          <li class="active"><a href="irpf.html">IRPF</a></li>
+          <!-- <li><a href="#contact"></a></li> -->
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -46,9 +47,39 @@
 
     <div class="row">
       <div id="main" class="col-xs-8 col-md-8">
-        <div class="jumbotron">
-          <a href="prazos.html" class="btn btn-primary btn-lg btn-block">Calcula Prazos</a>
-          <a href="irpf.html" class="btn btn-primary btn-lg btn-block">Notificação IRPF</a>
+        <div class="panel panel-default title-irpf">
+          <h4 class="text-center">Calcula IRPF</h4>
+        </div>
+
+        <form action="" class="form-horizontal" role="form">
+          <div class="form-group form-group-sm">
+            <label for="rend-trib" class="col-md-9 control-label">
+              1. Total de Rendimentos Tributáveis Declarados
+            </label>
+            <div class="col-md-3">
+              <input type="text" class="form-control" id="rend-trib">
+            </div>
+          </div>
+          <div class="form-group form-group-sm">
+            <label for="omissao-rend" class="col-md-9 control-label">
+              2. Omissão de Rendimentos Apurada
+            </label>
+            <div class="col-md-3">
+              <input type="text" class="form-control" id="omissao-rend">
+            </div>
+          </div>
+        </form>
+
+
+        <div class="row">
+          <div class="col-md-9">
+            <p class="">1. Total de Rendimentos Tributáveis Declarados</p>
+            <p>2. Omissão de Rendimentos Apurada</p>
+          </div>
+          <div class="col-md-3" id="irpf">
+            <input type="text" class="form-control input-sm">
+            <input type="text" class="form-control input-sm">
+          </div>
         </div>
       </div>
       <div id="calendar" class="col-xs-4 col-md-4"></div>

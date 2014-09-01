@@ -26,7 +26,7 @@ jQuery(document).ready(function($) {
       for (var i = 0; i < holidays.length; i++) {
         if (month == holidays[i].month) {
 
-          $('div#calendar').append('<h6 id="cal-holidays">' + holidays[i].day 
+          $('div#calendar').append('<h6 id="cal-holidays" class="text-danger">' + holidays[i].day 
             + ' - ' + holidays[i].name + '</h6>');
         };
 
