@@ -12,25 +12,18 @@ jQuery(document).ready(function($) {
         var holidays = $.sortStaticAndFlexHolidays(date.getFullYear());
         for (var i = 0; i < holidays.length; i++) {
             if (date.getMonth() == holidays[i].month - 1 && date.getDate() == holidays[i].day) {
-                return [true, 'holidays', holidays[i].name];
+              $('div#calendar').append('<h6 id="cal-holidays" class="text-danger">' + holidays[i].day 
+                + ' - ' + holidays[i].name + '</h6>');
+              return [true, 'holidays', holidays[i].name];
             };
         
         };
         return [true, ''];
     },
     onChangeMonthYear: function(year, month, inst) {
-      // var auxHolidays = $.flexibleHolidays(year);
-      // var holidays = auxHolidays.concat($.staticHolidays(year));
-      var holidays = $.sortStaticAndFlexHolidays(year);
+      
       $('h6').remove();
-      for (var i = 0; i < holidays.length; i++) {
-        if (month == holidays[i].month) {
-
-          $('div#calendar').append('<h6 id="cal-holidays" class="text-danger">' + holidays[i].day 
-            + ' - ' + holidays[i].name + '</h6>');
-        };
-
-      };
+      
     },
     showOtherMonths: true
   });

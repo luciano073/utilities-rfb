@@ -6,3 +6,21 @@
 #irpf > input{
   margin-bottom: 3px !important;
 }
+
+p{
+  margin-bottom: 13px;
+}
+
+.pull-right{
+  float: right !important;
+}
+
+#btn-irpf{
+  margin-top: 20px;
+}
+
+select{
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 15px;
+}

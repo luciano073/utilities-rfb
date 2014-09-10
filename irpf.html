@@ -51,36 +51,83 @@
           <h4 class="text-center">Calcula IRPF</h4>
         </div>
 
-        <form action="" class="form-horizontal" role="form">
-          <div class="form-group form-group-sm">
-            <label for="rend-trib" class="col-md-9 control-label">
-              1. Total de Rendimentos Tributáveis Declarados
-            </label>
-            <div class="col-md-3">
-              <input type="text" class="form-control" id="rend-trib">
-            </div>
+        <div class="row" id="exercicio">
+          <div class="col-md-6"><h4 class="text-right">EXERCICIO:</h4></div>
+
+          
+          <div class="col-md-2">
+            <select name="exercicio" id="s-ex" class="form-control">
+              <option value="2015">2015</option>
+              <option value="2014">2014</option>
+              <option value="2014">2013</option>
+              <option value="2014">2012</option>
+              <option value="2014">2011</option>
+              <option value="2014">2010</option>
+              <option value="2014">2009</option>
+              <option value="2014">2008</option>
+              <option value="2014">2007</option>
+              <option value="2014">2006</option>
+              <option value="2014">2005</option>
+              <option value="2014">2004</option>
+              <option value="2014">2003</option>
+            </select>
           </div>
-          <div class="form-group form-group-sm">
-            <label for="omissao-rend" class="col-md-9 control-label">
-              2. Omissão de Rendimentos Apurada
-            </label>
-            <div class="col-md-3">
-              <input type="text" class="form-control" id="omissao-rend">
-            </div>
-          </div>
-        </form>
+          <div class="col-md-4"></div>
+        </div>
 
 
         <div class="row">
           <div class="col-md-9">
-            <p class="">1. Total de Rendimentos Tributáveis Declarados</p>
-            <p>2. Omissão de Rendimentos Apurada</p>
+            <p class=""><strong>1.</strong> Total de Rendimentos Tributáveis Declarados</p>
+            <p><strong>2. </strong>Omissão de Rendimentos Apurada</p>
+            <p><strong>3. </strong>Total das Deduções Declaradas</p>
+            <p><strong>4. </strong>Glosa de Deduções Indevidas</p>
+            <p><strong>5. </strong>Previdência Oficial sobre Rendimento Omitido</p>
+            <p><strong>6. </strong>Base de Cálculo Apurada (1+2-3+4-5)</p>
+            <p><strong>7. </strong>Imposto Apurado após Alterações (Tabela Progressiva Anual)</p>
+            <p><strong>8. </strong>Contrib. Prev. a Emp. Doméstico Declarado</p>
+            <p><strong>9. </strong>Deduções de Incentivo Declarada</p>
+            <p><strong>10.</strong> Glosa de Deduções de Incentivo</p>
+            <p><strong>11.</strong> Total de Imposto Pago Declarado</p>
+            <p><strong>12.</strong> Glosa de Imposto Pago</p>
+            <p><strong>13.</strong> IRRF sobre infração ou Carnê Leão Pago</p>
+            <p><strong>14.</strong> Saldo de Imposto a Pagar/Restituir Apurado após Alterações (7-8-9+10-11+12-13)</p>
+            <p><strong>15.</strong> Imposto a Pagar/Restituir Declarado</p>
+            <p><strong>16.</strong> Imposto já Restituído</p>
+            <p><strong>17.</strong> Imposto Suplementar ou a Restituir Ajustado</p>
           </div>
           <div class="col-md-3" id="irpf">
             <input type="text" class="form-control input-sm">
             <input type="text" class="form-control input-sm">
+            <input type="text" class="form-control input-sm">
+            <input type="text" class="form-control input-sm">
+            <input type="text" class="form-control input-sm">
+            <input type="text" class="form-control input-sm" disabled>
+            <input type="text" class="form-control input-sm" disabled>
+            <input type="text" class="form-control input-sm">
+            <input type="text" class="form-control input-sm">
+            <input type="text" class="form-control input-sm">
+            <input type="text" class="form-control input-sm">
+            <input type="text" class="form-control input-sm">
+            <input type="text" class="form-control input-sm">
+            <input type="text" class="form-control input-sm" disabled>
+            <input type="text" class="form-control input-sm">
+            <input type="text" class="form-control input-sm">
+            <input type="text" class="form-control input-sm" disabled>
           </div>
         </div>
+          <div class="row" id="btn-irpf">
+            <div class="col-md-4">
+              <button class="btn btn-default pull-right">Limpar</button>
+            </div>
+            <div class="col-md-4">
+              <button class="btn btn-default center-block" id="irpf-calc">Calcular</button>
+            </div>
+            <div class="col-md-4">
+              <button class="btn btn-default pull-left">Imprimir</button>
+            </div>
+          </div>
+
       </div>
       <div id="calendar" class="col-xs-4 col-md-4"></div>
     </div>
@@ -97,33 +144,26 @@
   <script src="js/feriados.js" type="text/javascript"></script>
   <script src="js/calendar.js" type="text/javascript"></script>
   <script src="js/calcs.js" type="text/javascript"></script>
-  <script src="js/calculate-deadline.js" type="text/javascript"></script>
+  <script src="js/irpf.js" type="text/javascript"></script>
+  <script src="js/prazos.js" type="text/javascript"></script>
   <script src="js/jquery.inputmask.bundle.min.js" type="text/javascript"></script>
   <script src="js/bootstrap.min.js"></script>
   <script>
     $(document).ready(function() {
-      // console.log($.countingBegin(new Date(2014, 3, 18)));
-      // console.log($.deadline(new Date(2014, 3, 18)));
-      // console.log($.allHolidays(2014));
-      // console.log($.testFunction("19/12/1973"));
-      // $("#time-deadline").inputmask('numeric',
-      //  {
-      //     // numericInput: true,
-      //     groupSeparator: '.',
-      //     digits: 2,
-      //     prefix: 'R$ ',
-      //     placeholder: '0',
-      //     autoGroup: true,
-      //     digitsOptional: false,
-      //     radixPoint: ',',
-      //     rightAlign: false
-      //     // nojumps: true
-      //   });
-      var d = new Date();
-      // console.log($.datepicker.formatDate('D, d M yy', d));
-      // console.log($.datepicker.parseDate('dd/mm/yy', '25/08/1993'));
-      // console.log($.datepicker.rfc2822(d));
+      // $('button#irpf-calc').click(function(e) {
+      //   alert($('div#irpf input:nth-child(1)').val());
+      // });
 
+      // $('div#irpf input:lt(5)').blur(function(e) {
+      //   var field2 = $('div#irpf input:eq(1)').val();
+      //   var field1 = $('div#irpf input:eq(0)').val();
+      //   var field3 = $('div#irpf input:eq(2)').val();
+      //   var field4 = $('div#irpf input:eq(3)').val();
+      //   var field5 = $('div#irpf input:eq(4)').val();
+      //   var field6 = field1 + field2 - field3 + field4 - field5;
+      //   $('div#irpf input:eq(5)').val(field6);
+      //   // alert(typeof(teste));
+      // });
     });
   </script>
 </body>
