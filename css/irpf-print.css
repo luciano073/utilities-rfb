@@ -1,0 +1,31 @@
+/*body{
+  height: 3480px !important;
+  width: 2380px !important;
+}
+*/
+*{
+  font-size: 11px;
+}
+div.navbar, div#calendar, div#year, div#btn-irpf, div.title-irpf{
+  display: none;
+}
+
+div#irpf{
+  width: 150px;
+  float: none !important;
+}
+
+div.irpf{
+  width: 500px;
+  float: none !important;
+  /*float: left;*/
+}
+
+.input-sm{
+  /*width: 60px !important;*/
+  border: none !important;
+  background: transparent !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+ }
