@@ -114,5 +114,11 @@ jQuery(document).ready(function($) {
       placement: 'bottom'
     });
 
+    $('#t-inicial').tooltip(
+      {
+        title: 'Início da Contagem.',
+        placement: 'left'
+      });
+
   // $('span.glyphicon-info-sign').tooltip();
 });

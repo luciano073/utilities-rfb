@@ -8,7 +8,10 @@
   <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,300italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/calendar.css" type="text/css">
+  <link rel="stylesheet" href="css/app.css" type="text/css">
   <link rel="stylesheet" href="css/main.css" type="text/css">
   <link rel="stylesheet" href="css/irpf.css" type="text/css">
   <link rel="stylesheet" href="css/irpf-print.css" type="text/css" media="print">
@@ -23,24 +26,23 @@
 </head>
 <body>
 
-  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="home.html">Utilitários RFB</a>
-      </div>
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li class=""><a href="prazos.html">Prazos</a></li>
-          <li class="active"><a href="irpf.html">IRPF</a></li>
-          <!-- <li><a href="#contact"></a></li> -->
-        </ul>
-      </div><!--/.nav-collapse -->
+  <div class="header">
+    <div class="linha">
+      <header>
+        <div class="coluna col-4">
+          <h1 class="logo">Receita Federal <span>- GOIÂNIA</span></h1>
+        </div>
+        <div class="coluna col-8">
+          <nav>
+            <ul class="menu inline sem-marcador">
+              <li><a href="home.html">home</a></li>
+              <li><a href="prazos.html">tempestividade</a></li>
+              <li class="active"><a href="irpf.html">irpf</a></li>
+              <li><a href="#">todo</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
     </div>
   </div>
 

@@ -20,25 +20,38 @@
   };
 
   function searchUsefulDay(data) {
-    while (isUselessDay(data)) {
-      data = new Date(data.setDate(data.getDate() + 1));
+    var aux = new Date(data);
+    while (isUselessDay(aux)) {
+      aux = new Date(aux.setDate(aux.getDate() + 1));
     }
     // return new Date(data);
-    return data;
+    // console.log('funcion searchUsefulDay:');
+    // console.log(data);
+    return aux;
   };
+
+  function awareDate(data) {
+    return searchUsefulDay(data);
+  }
 
   function countingBegin(awareDate) {
-    var begin = searchUsefulDay(awareDate);
+    // var begin = searchUsefulDay(awareDate);
     // var termoInicial = searchUsefulDay(awareDate);
-    var auxInicial = begin.setDate(begin.getDate() + 1);
-    return searchUsefulDay(new Date(auxInicial));
+    // var auxInicial = begin.setDate(begin.getDate() + 1);
+    return searchUsefulDay(new Date(awareDate.setDate(awareDate.getDate() + 1)));
   };
 
-  $.deadline = function(data, prazo) {
-    var checkType = data instanceof Date;
-    if (!checkType) {data = $.datepicker.parseDate('dd/mm/yy', data);};
-    var termoInicial = countingBegin(data);
-    var auxDate = countingBegin(data);
+  $.deadline = function(ciencia, prazo) {
+    var checkType = ciencia instanceof Date;
+    if (!checkType) {ciencia = $.datepicker.parseDate('dd/mm/yy', ciencia);};
+    // console.log(searchUsefulDay(ciencia));
+    var cienteEm = awareDate(ciencia);
+    var auxDate1 = awareDate(ciencia)
+    var termoInicial = countingBegin(auxDate1);
+    // cienteEm = awareDate(ciencia);
+    // console.log(cienteEm);
+    // console.log(termoInicial);
+    var auxDate = countingBegin(cienteEm);
     var contaPrazo = auxDate.setDate(auxDate.getDate() + (prazo - 1));
     var prazoFinal = searchUsefulDay(new Date (contaPrazo));
     return [termoInicial, new Date(contaPrazo), prazoFinal];

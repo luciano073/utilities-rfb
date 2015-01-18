@@ -3,29 +3,23 @@
   width: 2380px !important;
 }
 */
-*{
-  font-size: 11px;
-}
-div.navbar, div#calendar, div#year, div#btn-irpf, div.title-irpf{
-  display: none;
-}
 
-div#irpf{
-  width: 150px;
-  float: none !important;
-}
-
-div.irpf{
-  width: 500px;
-  float: none !important;
-  /*float: left;*/
-}
-
-.input-sm{
+input, span{
   /*width: 60px !important;*/
-  border: none !important;
-  background: transparent !important;
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
+  border: 0 !important;
   box-shadow: none !important;
+  /*width: 100px !important;*/
+  display: inline !important;
  }
+
+
+.medium-3{
+  width: 100px;
+  float: right;
+  /*clear: both;*/
+}
+
+.medium-9{
+  width: 600px;
+  float: left;
+}
